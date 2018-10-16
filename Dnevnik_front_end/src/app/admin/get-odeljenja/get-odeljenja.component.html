@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr class="table-primary">
+      <th>Odeljenje</th>
+      <th>Razred</th>
+      <th>Školska godina</th>
+      <th>Obriši Odeljenje</th>
+    </tr>
+  </thead>
+  <tbody class="thead-dark">
+    <tr *ngFor="let odeljenje of odeljenja">
+      <td>{{odeljenje.odeljenje}}. odeljenje</td>
+      <td>{{odeljenje.razred.razred}} razreda</td>
+      <td>{{odeljenje.razred.skolskaGodina}} godina</td>
+      <td><button class="btn btn-outline-dark btn-sm" title="delete odeljenje" (click)="deleteOdeljenje(odeljenje)">Obriši</button></td>
+    </tr>
+  </tbody>
+  <button class="btn btn-info" routerLink="/addOdeljenje">
+    <i class="fa fa-add"></i>Dodaj odeljenje
+  </button>

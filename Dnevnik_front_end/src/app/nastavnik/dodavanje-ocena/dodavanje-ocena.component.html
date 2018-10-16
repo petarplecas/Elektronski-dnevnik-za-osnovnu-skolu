@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th>Razred</th>
+        <th>Odeljenje</th>
+        <th>Predmet</th>
+        <th>Školska godina</th>
+        <th>Obriši Odeljenje</th>
+      </tr>
+    </thead>
+    <tbody class="thead-dark">
+      <tr *ngFor="let odeljenje of odeljenja">
+        <td>{{odeljenje.razred}} razred</td>
+        <td>{{odeljenje.odeljenje}}. odeljenje</td>
+        <td>{{odeljenje.nazivPredmeta}}</td>
+        <td>{{odeljenje.skolskaGodina.skolskaGodina}} godina</td>
+        <td><button class="btn btn-outline-info" [class.selected]="odeljenje.idOdeljenje === selectedId" title="odeljenja"  [routerLink]="['/getUcenikeOdeljenja', odeljenje.idOdeljenje]">Učenici</button></td>
+      </tr>
+    </tbody>

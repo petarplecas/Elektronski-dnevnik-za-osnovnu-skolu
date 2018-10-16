@@ -1,0 +1,39 @@
+<div>
+  <div class="text-center mt-3">
+      <h3>Dodavanje novog roditelja</h3>
+  </div>
+  <div class="mt-4 p-3">
+      <form class="form-add clearfix w-50 mx-auto p-4" ngNativeValidate (submit)="addRoditelj(ime.value, prezime.value, email.value, korisnickoIme.value, lozinka.value)">
+
+          <div class="form-group">
+              <label for="ime">Ime roditelja</label>
+              <input class="form-control" type="text" id="ime" #ime tabindex="1" required/>
+          </div>
+          <div class="form-group">
+              <label for="prezime">Prezime roditelja</label>
+              <input class="form-control" type="text" id="prezime" #prezime tabindex="2" required />
+          </div>
+
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input class="form-control" type="email" id="email" #email tabindex="3" required email />
+          </div>
+
+          <div class="form-group">
+              <label for="korisnickoIme">Korisnicko ime</label>
+              <input class="form-control" type="text" id="korisnickoIme" #korisnickoIme tabindex="4" required />
+          </div>
+
+          <div class="form-group">
+              <label for="lozinka">Lozinka</label>
+              <input class="form-control" type="password" id="lozinka" #lozinka tabindex="5" required />
+          </div>
+
+          <div class="float-right">
+              <button class="btn btn-outline-primary mr-1" type="submit" tabindex="6">Dodaj roditelja</button>
+              <button class="btn btn-outline-warning" type="button" (click)="goBack()" tabindex="7">Odustani</button>
+          </div>
+
+      </form>
+  </div>
+</div>

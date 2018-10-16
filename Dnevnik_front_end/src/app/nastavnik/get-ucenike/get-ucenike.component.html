@@ -1,0 +1,8 @@
+ <table class="table">
+  <tbody class="thead-dark">
+    <tr *ngFor="let ucenik of ucenici">
+      <td class="name">{{ ucenik.ime }} {{ucenik.prezime}}</td>
+      <td class="text-left"><button class="btn btn-info btn-sm " [class.selected]="ucenik.idUcenik === selectedId" title="ucenici"  [routerLink]="['/getOceneN', ucenik.idUcenik]">Ocene</button></td>
+    </tr>
+  </tbody>
+</table>

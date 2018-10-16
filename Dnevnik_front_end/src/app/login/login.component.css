@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    /* color of text
+    color */
+    line-height: 1.6;
+}
+
+#showcase{
+    background-image: url('../../assets/images/home123.jpeg');
+    background-size: cover;
+    background-position: center;
+    /*100vh - 100% visine ekrana*/
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+   
+}
+
+/*Login form */
+#login-form{
+    background: rgba(76, 105, 110, 0.9);
+    width: 320px;
+    height: 340px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+#login-form h1{
+        line-height: 1.2;
+        font-size: 28px;
+        color: #222;
+        text-align: center;
+        margin-bottom: 10px;
+}
+
+#login-form label{
+    font-weight: 700;
+    font-size: 16px;
+    color: rgb(14, 13, 13);
+    padding: 0;
+    margin: 0 0 5px;
+    height: auto;
+    border-radius: 0px 10px 10px 0px;
+}
+
+#login-form input{
+    background-color: hsla(0, 0%, 100%, .7);
+    height: 35px;
+    width: 100%;
+    font-size: 19px;
+    font-weight: 400;
+    color: #222;
+    border: none;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    padding-left: 7px;
+    box-sizing: border-box;
+}
+
+#login-form input::placeholder{
+    font-size: 14px;
+} 
+
+#login-form button{
+    width: 100%;
+    border: none;
+    background-color: rgba(29, 68, 75, 0.9);
+    height: 40px;
+    line-height: 40px;
+    font-weight: 700;
+    font-size: 17px;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.font{
+    color: white;
+}

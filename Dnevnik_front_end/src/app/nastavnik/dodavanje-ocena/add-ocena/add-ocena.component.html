@@ -1,0 +1,33 @@
+<div class="mt-4 p-3">
+  <form class="form-add clearfix w-50 mx-auto p-4" ngNativeValidate (submit)="addOcena()">
+      <div class="form-group">
+          <label for="visinaOcene">Ocena</label>
+          <input class="form-control" type="number" name="visinaOcene"  [(ngModel)]="visinaOcene" tabindex="1" required  min="1" max="5"/>
+      </div>
+      <div class="form-group">
+          <label for="Opis">Opis ocene</label>
+          <input class="form-control" type="text" name="opisOcene" [(ngModel)]="opisOcene" tabindex="2" required />
+      </div>
+      <div class="form-group">
+          <label for="Opis">Tip ocene</label>
+          <select class="form-control" name="ocenaTip" id="" [(ngModel)]="ocenaTip">
+              <option value="0" selected>Izaberi tip ocene</option>
+            <option value="1">Redovna I</option>
+            <option value="2">Polugodiste</option>
+            <option value="3">Redovna II</option>
+            <option value="4">Zakljucna</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="Opis">Predmet</label>
+        <select class="form-control" name="predmet" [(ngModel)]="predmet" required>
+            <option *ngFor="let predmet of predmeti" [ngValue]="predmet.idPredmet">{{predmet.nazivPredmeta.nazivPredmeta}}</option>
+        </select>
+      </div>
+
+      <div class="float-right">
+          <button class="btn btn-outline-primary mr-1" type="submit"  tabindex="4">Dodaj ocenu</button>
+          <button class="btn btn-outline-warning" type="button" (click)="goBack()" tabindex="5">Odustani</button>
+      </div>
+  </form> 
+</div>

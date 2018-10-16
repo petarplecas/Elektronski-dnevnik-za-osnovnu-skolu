@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr class="table-primary">
+      <th>Roditelj</th>
+      <th>Izmeni Roditelja</th>
+      <th>Obriši Roditelja</th>
+    </tr>
+  </thead>
+  <tbody class="thead-dark">
+    <tr *ngFor="let roditelj of roditelji">
+      <td>{{roditelj.ime}} {{roditelj.prezime}}</td>
+      <td><button class="btn btn-outline-primary btn-sm" [class.selected]="roditelj.idRoditelj === selectedId" title="edit roditelj"  [routerLink]="['/putRoditelj', roditelj.idRoditelj]">Izmeni</button></td>
+      <td><button class="btn btn-outline-dark btn-sm" title="delete roditelj" (click)="deleteRoditelj(roditelj)">Obriši</button></td>
+    </tr>
+  </tbody>
+  <button class="btn btn-info" routerLink="/addRoditelj">
+    <i class="fa fa-add"></i>Dodaj roditelja
+  </button>

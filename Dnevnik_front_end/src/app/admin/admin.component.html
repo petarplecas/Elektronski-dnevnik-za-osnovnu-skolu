@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Elektronski dnevnik</a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">   
+          <button class="btn btn-info" routerLink="/admin/nastavnici">
+            <i class="fa fa-add"></i>Nastavnik
+          </button>
+        </li>
+        <li class="nav-item">
+            <button class="btn btn-info" routerLink="/admin/ucenici">
+              <i class="fa fa-add"></i>Ucenik
+            </button>
+          </li>
+        <li class="nav-item">
+          <button class="btn btn-info" routerLink="/admin/roditelji">
+            <i class="fa fa-add"></i>Roditelj
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-info" routerLink="/admin/predmeti">
+            <i class="fa fa-add"></i>Predmet
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-info" routerLink="/admin/odeljenja">
+            <i class="fa fa-add"></i>Odeljenje
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-info" routerLink="/admin/razred">
+            <i class="fa fa-add"></i>Razred
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-info" routerLink="/admin/nazivPredmeta">
+            <i class="fa fa-add"></i>Naziv predmeta
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-outline-info" routerLink="/admin/nasOdePre">
+            <i class="fa fa-add"></i>Nastavnik-odeljenje
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="form-row float-right">
+      <button class="btn btn-danger" routerLink="/login" >
+        <i class="fa fa-sign-out"></i>Logout
+      </button>
+    </div>
+  </div>
+</nav>
+<body>
+  <router-outlet></router-outlet>
+</body>

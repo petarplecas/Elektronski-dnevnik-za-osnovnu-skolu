@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th>Razred</th>
+        <th>Izmeni razred</th>
+        <th>Obriši razred</th>
+      </tr>
+    </thead>
+    <tbody class="thead-dark">
+      <tr *ngFor="let razred of razredi">
+        <td>{{razred.razred}} {{razred.skolskaGodina}}</td>
+        <td><button class="btn btn-outline-primary btn-sm" [class.selected]="razred.idRsg === selectedId" title="edit razred"  [routerLink]="['/putRazred', razred.idRsg]">Izmeni</button></td>
+        <td><button class="btn btn-outline-dark btn-sm" title="delete razred" (click)="deleteRazred(razred)">Obriši</button></td>
+      </tr>
+    </tbody>
+    <button class="btn btn-info" routerLink="/addRazred">
+      <i class="fa fa-add"></i>Dodaj razred
+    </button>

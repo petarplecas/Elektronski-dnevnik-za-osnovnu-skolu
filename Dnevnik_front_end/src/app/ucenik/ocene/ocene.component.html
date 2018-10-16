@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Elektronski dnevnik</a>
+      </div>
+    </div>
+    <div class="form-row float-right">
+      <button class="btn btn-info" routerLink="/login" >
+        <i class="fa fa-sign-out"></i>Logout
+      </button>
+    </div>
+</nav>
+<body>
+  <table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th>Predmet</th>
+        <th>Ocena</th>
+        <th>Opis ocene</th>
+        <th>Nastavnik</th>
+      </tr>
+    </thead>
+    <tbody class="thead-dark">
+      <tr class="table-secondary">
+        <td colspan="4"><h6>Ocene iz prvog polugodišta</h6></td>
+      </tr>
+      <tr *ngFor="let ocenaI of oceneI">
+        <td>{{ ocenaI.predmet }}</td>
+        <td>{{ ocenaI.visinaOcene }}</td>
+        <td>{{ ocenaI.opisOcene }}</td>
+        <td>{{ ocenaI.nastavnik }}</td>
+      </tr>
+    </tbody>
+    <tbody class="thead-dark">
+      <tr class="table-secondary">
+        <td colspan="4"><h6>Ocena na polugodištu</h6></td>
+      </tr>
+      <tr *ngIf="pol">
+        <td>{{ pol.predmet }}</td>
+        <td>{{ pol.visinaOcene }}</td>
+        <td>{{ pol.opisOcene }}</td>
+        <td>{{ pol.nastavnik }}</td>
+      </tr>
+    </tbody>
+    <tbody class="thead-dark">
+      <tr class="table-secondary">
+        <td colspan="4"><h6>Ocene iz drugog polugodišta</h6></td>
+      </tr>
+      <tr *ngFor="let ocenaII of oceneII">
+        <td>{{ ocenaII.predmet }}</td>
+        <td>{{ ocenaII.visinaOcene }}</td>
+        <td>{{ ocenaII.opisOcene }}</td>
+        <td>{{ ocenaII.nastavnik }}</td>
+      </tr>
+    </tbody>
+    <tbody class="thead-dark">
+        <tr class="table-secondary">
+          <td colspan="4"><h6>Zaključena ocena</h6></td>
+        </tr>
+        <tr *ngIf="kraj">
+          <td>{{ kraj.predmet }}</td>
+          <td>{{ kraj.visinaOcene }}</td>
+          <td>{{ kraj.opisOcene }}</td>
+          <td>{{ kraj.nastavnik }}</td>
+        </tr>
+      </tbody>
+  </table>
+</body>

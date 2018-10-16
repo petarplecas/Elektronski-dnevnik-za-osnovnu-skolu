@@ -1,0 +1,42 @@
+<div class="mt-4 p-3">
+    <form class="form-add clearfix w-50 mx-auto p-4" ngNativeValidate (submit)="addUcenik()">
+
+        <div class="form-group">
+            <label for="ime">Ime ucenika</label>
+            <input class="form-control" type="text" name="ime"  [(ngModel)]="ime" tabindex="1" required/>
+        </div>
+        <div class="form-group">
+            <label for="prezime">Prezime ucenika</label>
+            <input class="form-control" type="text" name="prezime"  [(ngModel)]="prezime" tabindex="2" required />
+        </div>
+
+        <div class="form-group">
+            <label for="korisnickoIme">Korisnicko ime</label>
+            <input class="form-control" type="text" name="korisnickoIme"  [(ngModel)]="korisnickoIme" tabindex="3" required />
+        </div>
+
+        <div class="form-group">
+            <label for="lozinka">Lozinka</label>
+            <input class="form-control" type="password" name="lozinka"  [(ngModel)]="lozinka" tabindex="4" required />
+        </div>
+         
+        <div class="form-group">
+            <label for="Opis">Odeljenje</label>
+            <select class="form-control" name="odeljenje" [(ngModel)]="odeljenje" required>
+                <option *ngFor="let odeljenje of odeljenja" [ngValue]="odeljenje.idOdeljenje">{{odeljenje.razred.razred}} {{odeljenje.odeljenje}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+          <label for="Opis">Roditelj</label>
+          <select class="form-control" name="roditelj" [(ngModel)]="roditelj" required>
+              <option *ngFor="let roditelj of roditelji" [ngValue]="roditelj.idRoditelj">{{roditelj.ime}} {{roditelj.prezime}}</option>
+          </select>
+        </div>
+  
+        <div class="float-right">
+            <button class="btn btn-outline-primary mr-1" type="submit"  tabindex="4">Dodaj ucenika</button>
+            <button class="btn btn-outline-warning" type="button" (click)="goBack()" tabindex="5">Odustani</button>
+        </div>
+    </form> 
+  </div>

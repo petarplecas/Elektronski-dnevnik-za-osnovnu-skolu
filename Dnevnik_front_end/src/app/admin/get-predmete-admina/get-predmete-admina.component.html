@@ -1,0 +1,42 @@
+<!-- <body>
+  <div>
+    <ul class="predmeti">
+    <li class="nav-item">   
+      <button class="btn btn-info" routerLink="/addPredmet">
+        <i class="fa fa-add"></i>Dodaj predmet
+      </button>
+    </li>
+    <li *ngFor="let predmet of predmeti">
+          <span class="badge">{{ predmet.idPredmet || -1 }}</span>
+          <span class="name">{{predmet.nazivPredmeta.nazivPredmeta}}</span>
+          <span class="name">{{predmet.razred.razred}}</span>
+          <span class="number">{{predmet.nedeljniFondCasova}}</span>
+          <button class="delete" title="delete predmet" (click)="deletePredmet(predmet)">Obriši</button>
+          <button [class.selected]="predmet.idPredmet === selectedId" title="edit predmet"  [routerLink]="['/putPredmet', predmet.idPredmet]">Izmeni</button>
+      </li>
+    </ul>
+  </div>
+</body> -->
+
+<table class="table">
+  <thead>
+    <tr class="table-primary">
+      <th>Predmet</th>
+      <th>Razred</th>
+      <th>Nedeljni fond časova</th>
+      <th>Izmeni predmet</th>
+      <th>Obriši predmet</th>
+    </tr>
+  </thead>
+  <tbody class="thead-dark">
+    <tr *ngFor="let predmet of predmeti">
+      <td>{{predmet.nazivPredmeta.nazivPredmeta}}</td>
+      <td>{{predmet.razred.razred}}</td>
+      <td>{{predmet.nedeljniFondCasova}}</td>
+      <td><button class="btn btn-outline-primary btn-sm"  [class.selected]="predmet.idPredmet === selectedId" title="edit predmet"  [routerLink]="['/putPredmet', predmet.idPredmet]">Izmeni</button></td>
+      <td><button class="btn btn-outline-dark btn-sm" title="delete predmet" (click)="deletePredmet(predmet)">Obriši</button></td>
+    </tr>
+  </tbody>
+  <button class="btn btn-info" routerLink="/addPredmet">
+    <i class="fa fa-add"></i>Dodaj predmet
+  </button>

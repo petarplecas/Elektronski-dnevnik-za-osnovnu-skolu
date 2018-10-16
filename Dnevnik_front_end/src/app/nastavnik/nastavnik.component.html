@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Elektronski dnevnik</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <button class="btn btn-info m-2" routerLink="/nastavnik/ocena">
+          <i class="fa fa-add"></i>Unesi ocenu
+        </button>
+        <button class="btn btn-info m-2" routerLink="/nastavnik/predmeti">
+          <i class="fa fa-add"></i>Pregled ocena
+        </button>
+      </ul>
+    </div>
+    <div class="form-row float-right">
+      <button class="btn btn-danger" routerLink="/login" >
+        <i class="fa fa-sign-out"></i>Logout
+      </button>
+    </div>
+  </div>
+</nav>
+<body>
+  <router-outlet></router-outlet>
+</body>

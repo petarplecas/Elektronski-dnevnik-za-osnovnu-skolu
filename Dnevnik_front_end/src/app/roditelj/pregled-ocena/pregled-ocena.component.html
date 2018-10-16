@@ -1,0 +1,45 @@
+<!-- <body>   
+  <div>
+    <ul class="ocene">
+        <h2>Ocene</h2>
+      <li *ngFor="let ocena of ocene">
+          <span class="badge">{{ ocena.idOcena || -1 }}</span>
+          <span class="name">{{ ocena.visinaOcene }}</span>
+          <span class="name">{{ ocena.opisOcene }}</span>
+          <span class="name">{{ ocena.predmet }}</span>
+          <span class="name">{{ ocena.nastavnik }}</span>
+      </li>
+    </ul>
+  </div> 
+</body> -->
+
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Elektronski dnevnik</a>
+    </div>
+  </div>
+  <div class="form-row float-right">
+    <button class="btn btn-info" routerLink="/login" >
+      <i class="fa fa-sign-out"></i>Logout
+    </button>
+  </div>
+</nav>
+<body>
+<table class="table">
+  <thead>
+    <tr class="table-primary">
+      <th>Predmet</th>
+      <th>Ocena</th>
+      <th>Opis ocene</th>
+      <th>Nastavnik</th>
+    </tr>
+  </thead>
+  <tbody class="thead-dark">
+    <tr *ngFor="let ocena of ocene">
+      <td>{{ ocena.predmet }}</td>
+      <td>{{ ocena.visinaOcene }}</td>
+      <td>{{ ocena.opisOcene }}</td>
+      <td>{{ ocena.nastavnik }}</td>
+    </tr>
+  </tbody>

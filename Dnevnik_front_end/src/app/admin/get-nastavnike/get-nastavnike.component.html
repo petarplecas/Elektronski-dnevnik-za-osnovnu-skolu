@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+    <tr class="table-primary">
+      <th>Nastavnik</th>
+      <th>Izmeni nastavnika</th>
+      <th>Obriši nastavnika</th>
+    </tr>
+  </thead>
+  <tbody class="thead-dark">
+    <tr *ngFor="let nastavnik of nastavnici">
+      <td>{{nastavnik.ime}} {{nastavnik.prezime}}</td>
+      <td><button class="btn btn-outline-primary btn-sm" [class.selected]="nastavnik.idNastavnik === selectedId" title="edit nastavnik"  [routerLink]="['/putNastavnik', nastavnik.idNastavnik]">Izmeni</button></td>
+      <td><button class="btn btn-outline-dark btn-sm" title="delete nastavnik" (click)="deleteNastavnik(nastavnik)">Obriši</button></td>
+    </tr>
+  </tbody>
+  <button class="btn btn-info" routerLink="/addNastavnik">
+    <i class="fa fa-add"></i>Dodaj nastavnika
+  </button>
+

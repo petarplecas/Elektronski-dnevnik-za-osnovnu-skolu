@@ -1,0 +1,27 @@
+<div class="mt-4 p-3">
+    <form class="form-add clearfix w-50 mx-auto p-4" ngNativeValidate (submit)="addPredmet()">
+        <div class="form-group">
+            <label for="visinaOcene">Nedeljni fond casova</label>
+            <input class="form-control" type="number" name="fond"  [(ngModel)]="fond" tabindex="1" required  min="1" max="5"/>
+        </div>
+        
+        <div class="form-group">
+            <label for="Opis">Naziv predmeta</label>
+            <select class="form-control" name="predmet" [(ngModel)]="predmet" required>
+                <option *ngFor="let predmet of predmeti" [ngValue]="predmet.idNazivPredmet">{{predmet.nazivPredmeta}}</option>
+            </select>
+          </div>
+        <div class="form-group">
+          <label for="Opis">Razred</label>
+          <select class="form-control" name="razred" [(ngModel)]="razred" required>
+              <option *ngFor="let razred of razredi" [ngValue]="razred.idRsg">{{razred.razred}}</option>
+          </select>
+        </div>
+  
+        <div class="float-right">
+            <button class="btn btn-outline-primary mr-1" type="submit"  tabindex="4">Dodaj predmet</button>
+            <button class="btn btn-outline-warning" type="button" (click)="goBack()" tabindex="5">Odustani</button>
+        </div>
+    </form> 
+  </div>
+  

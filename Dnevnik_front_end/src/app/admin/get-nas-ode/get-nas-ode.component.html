@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr class="table-primary">
+      <th>Ime i prezime nastavnika</th>
+      <th>Odeljenje</th>
+      <th>Predmet</th>
+      <th>Brisanje</th>
+    </tr>
+  </thead>
+  <tbody class="thead-dark">
+    <tr *ngFor="let nasOde of veze">
+      <td>{{nasOde.nastavnik.ime}} {{nasOde.nastavnik.prezime}}</td>
+      <td>{{nasOde.odeljenje.razred.razred}} razred {{nasOde.odeljenje.odeljenje}}. odeljenje</td>
+      <td>Predmet {{nasOde.predmet.nazivPredmeta.nazivPredmeta}} za {{nasOde.predmet.razred.razred}} razred</td>
+      <td><button class="btn btn-outline-dark btn-sm" title="delete vezu" (click)="deleteNasOde(nasOde)">Obriši</button></td>
+    </tr>
+  </tbody>
+  <button class="btn btn-info" routerLink="/addNasOde">
+    <i class="fa fa-add"></i>Dodaj vezu
+  </button>

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Elektronski dnevnik</a>
+    </div>
+  </div>
+  <div class="form-row float-right">
+    <button class="btn btn-info" routerLink="/login" >
+      <i class="fa fa-sign-out"></i>Logout
+    </button>
+  </div>
+</nav>
+<body>
+<table class="table">
+  <thead>
+    <tr class="table-primary">
+      <th>Predmet</th>
+      <th>Ocena</th>
+      <th>Opis ocene</th>
+      <th>Nastavnik</th>
+      <th>Izmeni ocenu</th>
+      <th>Obriši ocenu</th>
+    </tr>
+  </thead>
+  <tbody class="thead-dark">
+    <tr *ngFor="let ocena of ocene">
+      <td>{{ ocena.predmet }}</td>
+      <td>{{ ocena.visinaOcene }}</td>
+      <td>{{ ocena.opisOcene }}</td>
+      <td>{{ ocena.nastavnik }}</td>
+      <td><button class="btn btn-outline-primary btn-sm" [class.selected]="ocena.idOcena === selectedId" title="izmeni ocenu"  [routerLink]="['/putOcena', ocena.idOcena]">Izmeni</button></td>
+      <td><button class="btn btn-outline-dark btn-sm" title="obrisi ocenu" (click)="deleteOcenu(ocena)">Obriši</button></td>
+    </tr>
+  </tbody>

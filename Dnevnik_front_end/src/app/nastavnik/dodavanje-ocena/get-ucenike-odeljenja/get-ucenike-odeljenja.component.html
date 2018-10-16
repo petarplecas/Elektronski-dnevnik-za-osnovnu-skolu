@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Elektronski dnevnik</a>
+      </div>
+      <div class="form-row float-right">
+        <button class="btn btn-danger" routerLink="/login" >
+          <i class="fa fa-sign-out"></i>Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+
+<table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Ocena</th>
+      </tr>
+    </thead>
+    <tbody class="thead-dark">
+        <div *ngIf="ucenici.length == 0">
+          <tr>
+            <td>
+              Odeljenje nema ucenike
+            </td>
+          </tr>
+        </div>
+        <tr *ngFor="let ucenik of ucenici">
+          <td>{{ucenik.ime}}</td>
+          <td>{{ucenik.prezime}}</td>
+          <td><button class="btn btn-outline-info" [class.selected]="ucenik.idUcenik === selectedId" title="unesi ocenu"  [routerLink]="['/addOcena', ucenik.odeljenje.idOdeljenje, ucenik.idUcenik ]">Unesi ocenu</button></td>
+        </tr>
+      <div>
+          <button class="btn btn-outline-warning" type="button" (click)="goBack()" tabindex="5">Odeljenja</button>
+      </div>
+    </tbody>
+   

@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th>Naziv predmeta</th>
+        <th>Izmeni naziv predmeta</th>
+        <th>Obriši naziv predmeta</th>
+      </tr>
+    </thead>
+    <tbody class="thead-dark">
+      <tr *ngFor="let naziv of nazivi">
+        <td>{{naziv.nazivPredmeta}}</td>
+        <td><button class="btn btn-outline-primary btn-sm" [class.selected]="naziv.idNazivPredmet === selectedId" title="edit naziv predmeta"  [routerLink]="['/putNazivPredmeta', naziv.idNazivPredmet]">Izmeni</button></td>
+        <td><button class="btn btn-outline-dark btn-sm" title="delete naziv predmeta" (click)="deleteNazivPredmeta(naziv)">Obriši</button></td>
+      </tr>
+    </tbody>
+    <button class="btn btn-info" routerLink="/addNazivPredmeta">
+      <i class="fa fa-add"></i>Dodaj naziv predmeta
+    </button>

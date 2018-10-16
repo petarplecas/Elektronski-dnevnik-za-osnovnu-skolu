@@ -1,0 +1,22 @@
+<div class="mt-4 p-3">
+  <form class="form-add clearfix w-50 mx-auto p-4" ngNativeValidate (submit)="addOdeljenje()">
+
+      <div class="form-group">
+          <label for="ime">Odeljenje</label>
+          <input class="form-control" type="number" name="odeljenje"  [(ngModel)]="odeljenje" tabindex="1" required/>
+      </div>
+      
+      <div class="form-group">
+          <label for="Opis">Razred</label>
+          <select class="form-control" name="razred" [(ngModel)]="razred" required>
+              <option *ngFor="let razred of razredi " [ngValue]="razred.idRsg">{{razred.razred}} {{razred.skolskaGodina}}</option>
+          </select>
+      </div>
+
+      <div class="float-right">
+          <button class="btn btn-outline-primary mr-1" type="submit"  tabindex="4">Dodaj odeljenje</button>
+          <button class="btn btn-outline-warning" type="button" (click)="goBack()" tabindex="5">Odustani</button>
+      </div>
+  </form> 
+</div>
+

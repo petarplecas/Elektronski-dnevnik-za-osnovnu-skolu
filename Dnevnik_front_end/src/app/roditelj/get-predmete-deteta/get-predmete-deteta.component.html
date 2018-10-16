@@ -1,0 +1,8 @@
+<table class="table">
+  <tbody class="thead-dark">
+    <tr *ngFor="let predmet of predmeti">
+      <td class="name">{{ predmet.nazivPredmeta.nazivPredmeta }}</td>
+      <td class="text-left"><button class="btn btn-info btn-sm " [class.selected]="predmet.idPredmet === selectedId" [routerLink]="['/getOceneR', predmet.idPredmet]">Ocene</button></td>
+    </tr>
+  </tbody>
+</table>
