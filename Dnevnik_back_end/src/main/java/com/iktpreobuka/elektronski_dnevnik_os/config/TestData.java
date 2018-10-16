@@ -684,8 +684,8 @@ public class TestData {
 				getEncoder().encode("dimitrieskiv"), ulogaRepository.findById(4).get());
 		roditeljRepository.save(ro);
 
-		ro = new RoditeljEntity(160, "Marija", "Plecas", "marijaplecas@example.com", "plecasm",
-				getEncoder().encode("plecasm"), ulogaRepository.findById(4).get());
+		ro = new RoditeljEntity(160, "Marija", "Plecas", "marijaplecas@example.com", "plecasr",
+				getEncoder().encode("plecasr"), ulogaRepository.findById(4).get());
 		roditeljRepository.save(ro);
 
 		UcenikEntity uc = new UcenikEntity(161, "Nemanja", "Rodic", "rodicn", getEncoder().encode("rodicn"), odeljenjeRepository.findById(16).get(), roditeljRepository.findById(154).get(), ulogaRepository.findById(2).get());
